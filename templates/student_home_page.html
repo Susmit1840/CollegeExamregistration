@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>student_home_Page</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</head>
+<style>
+    *{
+        margin: 0px ;
+        padding: 0;
+        list-style:none;
+        text-decoration: none;
+        font-family:'Times New Roman', Times, serif;
+
+    }
+    body{
+        
+        background-color:rgb(224, 223, 250);
+     
+    }
+    .top_navbar{
+        box-sizing:border-box;
+        border-top:1px solid rgba(87, 85, 85, 0.1);
+        border-bottom:1px solid rgba(87, 85, 85, 0.1);
+        height:45px;
+        background:#040130;
+        
+    }
+    .top_navbar a{
+        padding:0px 13px;
+        font-family:'Segoe UI';
+        text-decoration:none;
+        float:right;
+        margin-top:4px;
+        margin-right:30px;
+        border-radius:6px;
+        font-size:14px;
+        color:rgb(236, 241, 245);
+        border: 0.5px solid whitesmoke;
+        background-color: #040130;
+        cursor: pointer;
+    }
+    .wrapper{
+        display:flex;
+        position:relative;
+       line-height:30px;
+       background: rgba(255,255,255,.2);
+    }
+    .wrapper .top_navbar{
+        width: 100%;
+        margin-left: 200px;
+    }
+    .sidebar{
+        position: fixed;
+        left:0;
+        width:250px;
+        height:100%;
+        background:#040130;
+    }
+    .sidebar .profile_image{
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
+        margin-bottom:10px;
+        margin-top:20px;
+    }
+    .sidebar h3{
+        color:whitesmoke;
+    }
+    .sidebar ul a{
+        display:block;
+        height:100%;
+        width:100%;
+        line-height:50px;
+        font-size:15px;
+        color:white;
+        padding-left:40px;
+        box-sizing:border-box;
+        border-top:1px solid rgba(255,255,255,.1);
+        border-bottom:1px solid black;
+        transition: .4s;
+    }
+    .sidebar ul li:hover a{
+        padding-left:50px;
+    }
+    select{
+        margin-left:300px;
+    }
+    div.content{
+        font-family:Georgia;
+        border-collapse: collapse;
+        border: 1px solid rgb(180, 176, 176);
+        margin-top: 70px;
+        margin-right: 30px;
+        margin-left: 80px;
+        padding-top: 20px;
+        padding-bottom:30px;
+        border-radius: 0px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+       padding: 10px;
+       background-color: rgb(248, 246, 244);
+    }
+    div.title{
+        font-family:Lucida Sans;
+        margin-top:0px;
+        height:35px;
+        width:100%;
+        font-size:20px;
+        padding-top:5px;
+        padding-left:10px;
+        line-height:10px;
+        box-sizing:border-box;
+        border-bottom:1px solid rgb(180, 176, 176);
+        transition: .4s;
+        color:#040130;
+    }
+    
+        .st-box {
+            float:left;
+            margin-top:50px;
+            width:290px;
+            height:400px;
+            background-color:white;
+            border:1px solid rgb(212, 206, 206);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+            padding:20px;
+        }
+        .nd-box {
+            float:left;
+            margin-top:50px;
+            width:290px;
+            height:400px;
+            background-color:white; 
+            border:1px solid rgb(212, 206, 206);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+            margin-left:20px;
+            padding:20px;
+        }
+        .rd-box {
+            float:right;
+            margin-top:50px;
+            width:280px;
+            height:400px;
+            padding:20px;
+            background-color:white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border:1px solid rgb(212, 206, 206);
+        }
+        .st-box table{
+        border-collapse: collapse;
+        margin-left:30px;
+        margin-top:70px;
+        background-color: white;
+        color:rgb(68, 67, 67);
+    }
+    .st-box th{
+        padding: 5px 120px 3px 5px;
+        border:1px solid rgb(212, 206, 206);
+        font-family:Georgia;
+        text-align:center;
+    }
+    .st-box img{
+        border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: -10px;
+   margin-left:70px;
+   width:80%;
+    }
+    .nd-box table{
+        border-collapse: collapse;
+        margin-left:10px;
+        margin-top:0px;
+        background-color: white;
+        color:rgb(68, 67, 67);
+       
+    }
+    .nd-box tr{
+        text-align:center;
+    }
+    .nd-box th{
+        padding:20px 20px;
+        border:1px solid rgb(212, 206, 206);
+        font-family:Georgia;
+       
+    }
+    .rd-box table{
+        border-collapse: collapse;
+        margin-left:10px;
+        margin-top:0px;
+        background-color: white;
+        color:rgb(68, 67, 67);
+      
+    }
+    .rd-box tr{
+        text-align:center;
+    }
+    .rd-box th{
+        padding:20px 20px;
+        border:1px solid rgb(212, 206, 206);
+        font-family:Georgia;
+       
+    }
+</style>
+<body>
+   <div class="wrapper">
+       <div class="sidebar">
+        <center>
+            <img src="user.png" class="profile_image" alt="">
+            <h3> {{ username }}</h3>
+        </center><br>
+        <ul>
+            <li><a href="#"><i class="fas fa-home">  Home</i></a></li>
+            <li><a href="#"><i class="fas fa-address-card">  Personal Details</i></a></li>
+            <li><a href="#"><i class="fas fa-edit">  Exam form</i></a></li>
+            <li><a href="#"><i class="fas fa-file-alt">  Result</i></a></li>
+        </ul>
+    </div>
+    <div class="top_navbar">
+        <form action="/exam" method="POST">
+    <div class="content">
+        <div class="title">
+             <i class="	far fa-edit"><b> / Please do read the instructions carefully before starting online payment</b></i>
+         </div>
+     <div class="container">
+         <div class="st-box">
+            <table>
+                
+                <tr><th>Name: </th></tr>
+                <tr><th>Date of birth:</th></tr>
+                <tr><th>Branch:</th></tr>
+                <tr><th>Year:</th></tr>
+                <tr><th>Address:</th></tr>
+                <tr><th>Phone:</th></tr>
+                </th>
+                </tr>
+            </table>
+         </div>
+         <div class="nd-box">
+            <table>
+                <tr><th>Fees payment</th></tr>
+                <tr><th>      <br><br>   </th></tr>
+                <tr><th>Note:In case you face any error during the transactions , please wait for 24 hours before starting the new transaction </th></tr>
+            </table>
+         </div>
+         <div class="rd-box">
+            <table>
+                <tr><th>Instructions</th></tr>
+                
+                <tr><th>Please do confirm your email id is active .
+                    Note:Please mention your ID, Name, Course and email id in your personal details. After the successful payment please do confirm the receipt for the current transaction is generated
+                </th></tr>
+            </table>
+         </div>
+    </div>
+    </form>
+    </div>
+    </div>
+    
+
+  
+    
+</body>
+</html>
